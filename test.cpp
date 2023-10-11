@@ -1,11 +1,13 @@
-#include <iostream>
-#include <string.h>
-#include <math.h>
-using namespace std;
+#include <sodium.h>
 
-int main()
+#include <iostream>
+#include <sodium.h>
+
+int main(void)
 {
-    long double delta = pow(2, 128) / pow(10, 9);
-    long double deltax = 4 * pow(10, 12) / 200;
-    cout << delta / (deltax * 86400 * 365) << endl;
+    if (sodium_init() == -1)
+    {
+        return 1;
+    }
+    return 0;
 }
